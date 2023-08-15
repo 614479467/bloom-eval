@@ -1,0 +1,64 @@
+bloomz:
+    bloomz-7b1-mt:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/bloomz-7b1-mt
+        prompt: "{question}"
+        precision: 'fp16'
+
+    phoenix-inst-chat-7b:
+        config_dir: /mntcephfs/data/med/zhanghongbo/general_pretrain/phoenix-inst-chat-7b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        precision: 'fp16'
+
+
+llama:
+    llama-7b-hf:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/llama_hf_7b
+        prompt: "{question}"
+        precision: 'fp16'
+
+    vicuna-7b-v1.1:
+        config_dir: /mntcephfs/lab_data/guimingchen/models/vicuna-7b-v1.1
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        precision: 'fp16'
+    vicuna-13b-v1.1:
+        config_dir: /mntcephfs/lab_data/guimingchen/models/vicuna-13b-v1.1
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        precision: 'fp16'
+
+    chimera-inst-chat-7b:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/chimera-inst-chat-7b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        precision: 'fp16'
+    chimera-inst-chat-13b:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/chimera-inst-chat-13b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        precision: 'fp16'
+
+
+llama-lora:
+    huatuo-llama-med-chinese:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/llama_hf_7b
+        lora_dir: /mntcephfs/data/med/zhanghongbo/Huatuo-Llama-Med-Chinese/lora-llama-med
+        prompt: "下面是一个问题，运用医学知识来正确回答提问.\n### 问题:\n{question}\n### 回答:\n"
+        precision: 'fp16'
+
+    guanaco-7b-leh-v2:
+        config_dir: /mntcephfs/lab_data/yufei/models/guanaco-7b-leh-v2
+        lora_dir: /mntcephfs/lab_data/yufei/models/guanaco-7b-leh-v2/guanaco-leh-7b-v2-adapter
+        prompt: "### Instruction: \n{question}\n\n### Response:"
+        precision: 'fp16'
+
+
+chatglm:
+    chatglm-6b:
+        config_dir: /mntcephfs/data/med/zhanghongbo/chatglm-6b
+        prompt: "[Round 0]\n问：{question}\n答："
+        precision: 'fp16'
+
+    doctor-glm:
+        config_dir: /mntcephfs/data/med/zhanghongbo/chatglm-6b
+        prefix_config_dir: /mntcephfs/data/med/zhanghongbo/DoctorGLM/Doctor_GLM/ckpt/ptuningv2/ptuningv2/pytorch_model.bin
+        prompt: "[Round 0]\n问：{question}\n答："
+        precision: 'fp16'
+
+
